@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Memanggil Font Awesome untuk Icon & Logo Resmi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -18,6 +21,8 @@
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
             --border-color: #e2e8f0;
+            --whatsapp-color: #25d366;
+            --whatsapp-hover: #1eac53;
         }
 
         * {
@@ -36,16 +41,30 @@
 
         /* Header / Hero Section Modern Minimalis */
         header { 
-            background-color: #0f172a; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white; 
-            padding: 80px 24px; 
+            padding: 90px 24px; 
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hiasan latar belakang coding tipis */
+        header::before {
+            content: "</>";
+            position: absolute;
+            font-family: monospace;
+            font-size: 12rem;
+            color: rgba(255, 255, 255, 0.03);
+            bottom: -30px;
+            right: 10%;
+            font-weight: bold;
         }
 
         header h1 {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: -0.05em;
             margin-bottom: 12px;
@@ -57,7 +76,7 @@
             color: #94a3b8;
             font-weight: 400;
             max-width: 600px;
-            margin: 0 auto 24px auto;
+            margin: 0 auto 28px auto;
         }
 
         .container { 
@@ -71,9 +90,9 @@
             background: var(--card-bg); 
             padding: 32px; 
             margin-bottom: 24px; 
-            border-radius: 12px; 
+            border-radius: 16px; 
             border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
 
         h2 { 
@@ -82,9 +101,17 @@
             font-size: 1.4rem;
             font-weight: 700;
             padding-bottom: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             border-bottom: 2px solid var(--border-color);
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 i {
+            color: var(--primary);
+            font-size: 1.2rem;
         }
 
         h2::after {
@@ -92,41 +119,58 @@
             position: absolute;
             bottom: -2px;
             left: 0;
-            width: 60px;
+            width: 70px;
             height: 2px;
             background-color: var(--primary);
         }
 
         #about p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         /* Project Card yang interaktif */
         .project-card { 
             background-color: #f8fafc;
             border: 1px solid var(--border-color);
-            padding: 20px; 
+            padding: 24px; 
             margin-bottom: 16px; 
-            border-radius: 8px;
-            transition: all 0.2s ease-in-out;
+            border-radius: 12px;
+            transition: all 0.25s ease-in-out;
+            display: flex;
+            gap: 16px;
         }
 
         .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             border-color: #cbd5e1;
+            background-color: #ffffff;
         }
 
-        .project-card h3 {
+        .project-icon {
+            background-color: #eff6ff;
+            color: var(--primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid #dbeafe;
+        }
+
+        .project-content h3 {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--text-main);
             margin-bottom: 6px;
         }
 
-        .project-card p {
+        .project-content p {
             font-size: 0.95rem;
             color: var(--text-muted);
         }
@@ -135,80 +179,115 @@
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 10px;
         }
 
         .skill-badge {
-            background: #edd8ff;
-            color: #6b21a8;
+            background: #f1f5f9;
+            color: #334155;
             font-size: 0.85rem;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid #d8b4fe;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
         }
 
-        .skill-badge.tech {
-            background: #e0f2fe;
-            color: #0369a1;
-            border-color: #bae6fd;
+        .skill-badge:hover {
+            background: #e2e8f0;
+            transform: scale(1.03);
         }
 
-        /* Tombol CTA Modern */
+        /* Pewarnaan khusus badge agar estetik & dinamis */
+        .skill-badge.excel { background: #ecfdf5; color: #065f46; border-color: #a7f3d0; }
+        .skill-badge.excel i { color: #10b981; }
+        
+        .skill-badge.sheet { background: #fefce8; color: #854d0e; border-color: #fef08a; }
+        .skill-badge.sheet i { color: #eab308; }
+
+        .skill-badge.tech { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+        .skill-badge.tech i { color: #22c55e; }
+
+        .skill-badge.data { background: #f5f3ff; color: #5b21b6; border-color: #ddd6fe; }
+        .skill-badge.data i { color: #8b5cf6; }
+
+        .skill-badge.box { background: #fff7ed; color: #9a3412; border-color: #ffedd5; }
+        .skill-badge.box i { color: #f97316; }
+
+        /* Tombol CTA WhatsApp Modern & Glow-up */
         .btn { 
             display: inline-flex; 
             align-items: center;
-            background: var(--primary); 
+            gap: 10px;
+            background: var(--whatsapp-color); 
             color: white; 
-            padding: 12px 28px; 
-            font-weight: 500;
-            font-size: 0.95rem;
+            padding: 14px 32px; 
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none; 
-            border-radius: 6px; 
-            transition: background 0.2s ease;
-            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            border-radius: 50px; 
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
         }
 
         .btn:hover { 
-            background: var(--primary-hover); 
+            background: var(--whatsapp-hover); 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>ACHMAD SYAMS FARUQ</h1>
+        <h1>ACHMAD SYAMS FARUQ 🚀</h1>
         <p>Logistics & Data Entry Specialist | Software Engineering Graduate</p>
-        <a href="https://wa.me/6285711044840" class="btn">Hubungi Saya via WhatsApp</a>
+        <a href="https://wa.me/6283172501475" class="btn">
+            <i class="fab fa-whatsapp fa-lg"></i> Hubungi Saya Via WhatsApp
+        </a>
     </header>
 
     <div class="container">
         <section id="about">
-            <h2>Tentang Saya</h2>
-            <p>Lulusan SMK jurusan IT yang memiliki kompetensi kuat dalam pengolahan data digital serta pengalaman praktis di bidang manajemen logistik. Terbiasa menggunakan Microsoft Excel dan Google Spreadsheet untuk akurasi data inventaris dan stock opname.</p>
+            <h2><i class="fas fa-user-tie"></i> Tentang Saya</h2>
+            <p>Lulusan SMK jurusan IT yang memiliki kompetensi kuat dalam pengolahan data digital serta pengalaman praktis di bidang manajemen logistik. Terbiasa menggunakan Microsoft Excel dan Google Spreadsheet untuk akurasi data inventaris dan stock opname. 📊</p>
         </section>
 
         <section id="experience">
-            <h2>Pengalaman & Projek Utama</h2>
+            <h2><i class="fas fa-briefcase"></i> Pengalaman & Projek Utama</h2>
+            
             <div class="project-card">
-                <h3>1. Database & Admin Data Logistik</h3>
-                <p>Mengelola proses input data logistik barang masuk dan keluar menggunakan Spreadsheet dengan ketelitian tinggi selama masa PKL.</p>
+                <div class="project-icon">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="project-content">
+                    <h3>1. Database & Admin Data Logistik</h3>
+                    <p>Mengelola proses input data logistik barang masuk dan keluar menggunakan Spreadsheet dengan tingkat ketelitian tinggi untuk menjaga validitas data inventaris selama masa PKL.</p>
+                </div>
             </div>
+            
             <div class="project-card">
-                <h3>2. Operasional Gudang & Stock Opname</h3>
-                <p>Melaksanakan pemeriksaan fisik stok berkala dan mempersiapkan logistik distribusi untuk outlet secara tepat waktu.</p>
+                <div class="project-icon">
+                    <i class="fas fa-boxes-stacked"></i>
+                </div>
+                <div class="project-content">
+                    <h3>2. Operasional Gudang & Stock Opname</h3>
+                    <p>Melaksanakan pemeriksaan fisik stok secara berkala (stock opname), menganalisis selisih stok, serta mempersiapkan manajemen logistik distribusi untuk outlet secara efektif dan tepat waktu.</p>
+                </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Keahlian</h2>
+            <h2><i class="fas fa-code-branch"></i> Keahlian & Tools</h2>
             <div class="skills-container">
-                <span class="skill-badge">Microsoft Excel</span>
-                <span class="skill-badge">Google Spreadsheet</span>
-                <span class="skill-badge">Data Entry</span>
-                <span class="skill-badge">Inventory Control</span>
-                <span class="skill-badge tech">HTML / CSS</span>
+                <span class="skill-badge excel"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+                <span class="skill-badge sheet"><i class="fas fa-table"></i> Google Spreadsheet</span>
+                <span class="skill-badge data"><i class="fas fa-keyboard"></i> Data Entry</span>
+                <span class="skill-badge box"><i class="fas fa-box-open"></i> Inventory Control</span>
+                <span class="skill-badge tech"><i class="fab fa-html5"></i> HTML / CSS</span>
             </div>
         </section>
     </div>
