@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Achmad Syams Faruq</title>
+    <!-- Menggunakan font modern kekinian -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header / Hero Section Modern Minimalis */
+        header { 
+            background-color: #0f172a; 
+            color: white; 
+            padding: 80px 24px; 
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+        }
+
+        .container { 
+            max-width: 760px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Section Styling */
+        section { 
+            background: var(--card-bg); 
+            padding: 32px; 
+            margin-bottom: 24px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        h2 { 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main); 
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        #about p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Project Card yang interaktif */
+        .project-card { 
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 20px; 
+            margin-bottom: 16px; 
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        .project-card h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Badge/Tags Keahlian Minimalis */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .skill-badge {
+            background: #edd8ff;
+            color: #6b21a8;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #d8b4fe;
+        }
+
+        .skill-badge.tech {
+            background: #e0f2fe;
+            color: #0369a1;
+            border-color: #bae6fd;
+        }
+
+        /* Tombol CTA Modern */
+        .btn { 
+            display: inline-flex; 
+            align-items: center;
+            background: var(--primary); 
+            color: white; 
+            padding: 12px 28px; 
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none; 
+            border-radius: 6px; 
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn:hover { 
+            background: var(--primary-hover); 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ACHMAD SYAMS FARUQ</h1>
+        <p>Logistics & Data Entry Specialist | Software Engineering Graduate</p>
+        <a href="https://wa.me/6285711044840" class="btn">Hubungi Saya via WhatsApp</a>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>Lulusan SMK jurusan IT yang memiliki kompetensi kuat dalam pengolahan data digital serta pengalaman praktis di bidang manajemen logistik. Terbiasa menggunakan Microsoft Excel dan Google Spreadsheet untuk akurasi data inventaris dan stock opname.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Pengalaman & Projek Utama</h2>
+            <div class="project-card">
+                <h3>1. Database & Admin Data Logistik</h3>
+                <p>Mengelola proses input data logistik barang masuk dan keluar menggunakan Spreadsheet dengan ketelitian tinggi selama masa PKL.</p>
+            </div>
+            <div class="project-card">
+                <h3>2. Operasional Gudang & Stock Opname</h3>
+                <p>Melaksanakan pemeriksaan fisik stok berkala dan mempersiapkan logistik distribusi untuk outlet secara tepat waktu.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Keahlian</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Microsoft Excel</span>
+                <span class="skill-badge">Google Spreadsheet</span>
+                <span class="skill-badge">Data Entry</span>
+                <span class="skill-badge">Inventory Control</span>
+                <span class="skill-badge tech">HTML / CSS</span>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
